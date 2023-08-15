@@ -45,6 +45,12 @@ export const useColumns = () => {
       align: "left",
       field: "lactose",
     },
+    {
+      name: "dryHop",
+      label: "Dry Hop",
+      align: "left",
+      field: "dryHop",
+    },
   ];
 
   return { columns };

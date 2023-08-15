@@ -5,6 +5,10 @@ type Row = UseGetBeersResItem & {
     value: number;
     unit: string;
   };
+  dryHop: {
+    value: number;
+    unit: string;
+  };
 };
 
 export const useRows = async () => {
@@ -23,6 +27,11 @@ export const useRows = async () => {
           unit: "",
         };
 
+        const dryHop = {
+          value: 0,
+          unit: "",
+        };
+
         const itemLactose = item.ingredients.hops.find(
           (hop) => hop.name === "Lactose"
         );
@@ -32,7 +41,16 @@ export const useRows = async () => {
           lactose.unit = itemLactose.amount.unit;
         }
 
-        return { ...item, lactose };
+        const itemDryHop = item.ingredients.hops.find(
+          (hop) => hop.add === "dry hop"
+        );
+
+        if (itemDryHop && itemDryHop.amount.value > 0) {
+          dryHop.value = itemDryHop.amount.value;
+          dryHop.unit = itemDryHop.amount.unit;
+        }
+
+        return { ...item, lactose, dryHop };
       });
 
       rows.value = rowsValue;

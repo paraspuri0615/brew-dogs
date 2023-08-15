@@ -52,6 +52,17 @@
             {{ props.row.lactose.value }} {{ props.row.lactose.unit }}
           </q-chip>
         </q-td>
+
+        <q-td key="dryHop" :props="props">
+          <q-chip
+            v-if="props.row.dryHop.value > 0"
+            class="glossy text-bold q-ma-none"
+            color="teal"
+            text-color="white"
+          >
+            {{ props.row.dryHop.value }} {{ props.row.dryHop.unit }}
+          </q-chip>
+        </q-td>
       </q-tr>
     </template>
   </q-table>
