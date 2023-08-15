@@ -21,37 +21,49 @@ export const useRows = async () => {
     const { data } = await useGetBeers({ brewed_after: "11-2012" });
 
     if (data.value) {
-      const rowsValue = data.value.map((item) => {
-        const lactose = {
-          value: 0,
-          unit: "",
-        };
+      const rowsValue = data.value
+        .filter((item) => {
+          const itemCentennial = item.ingredients.hops.find(
+            (hop) => hop.name === "Centennial"
+          );
 
-        const dryHop = {
-          value: 0,
-          unit: "",
-        };
+          if (itemCentennial && itemCentennial.amount.value > 0) {
+            return false;
+          }
 
-        const itemLactose = item.ingredients.hops.find(
-          (hop) => hop.name === "Lactose"
-        );
+          return true;
+        })
+        .map((item) => {
+          const lactose = {
+            value: 0,
+            unit: "",
+          };
 
-        if (itemLactose && itemLactose.amount.value > 0) {
-          lactose.value = itemLactose.amount.value;
-          lactose.unit = itemLactose.amount.unit;
-        }
+          const dryHop = {
+            value: 0,
+            unit: "",
+          };
 
-        const itemDryHop = item.ingredients.hops.find(
-          (hop) => hop.add === "dry hop"
-        );
+          const itemLactose = item.ingredients.hops.find(
+            (hop) => hop.name === "Lactose"
+          );
 
-        if (itemDryHop && itemDryHop.amount.value > 0) {
-          dryHop.value = itemDryHop.amount.value;
-          dryHop.unit = itemDryHop.amount.unit;
-        }
+          if (itemLactose && itemLactose.amount.value > 0) {
+            lactose.value = itemLactose.amount.value;
+            lactose.unit = itemLactose.amount.unit;
+          }
 
-        return { ...item, lactose, dryHop };
-      });
+          const itemDryHop = item.ingredients.hops.find(
+            (hop) => hop.add === "dry hop"
+          );
+
+          if (itemDryHop && itemDryHop.amount.value > 0) {
+            dryHop.value = itemDryHop.amount.value;
+            dryHop.unit = itemDryHop.amount.unit;
+          }
+
+          return { ...item, lactose, dryHop };
+        });
 
       rows.value = rowsValue;
     }
