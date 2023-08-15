@@ -53,5 +53,5 @@ import { useRows } from "./useRows";
 const { columns } = useColumns();
 const { rows, loading } = await useRows();
 
-const pagination = { rowsPerPage: 5 };
+const pagination = { rowsPerPage: 5, sortBy: "abv" };
 </script>
