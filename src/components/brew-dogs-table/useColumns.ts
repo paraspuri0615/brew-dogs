@@ -3,6 +3,12 @@ import { QTableProps } from "quasar";
 export const useColumns = () => {
   const columns: QTableProps["columns"] = [
     {
+      name: "image_url",
+      label: "Image",
+      align: "left",
+      field: "image_url",
+    },
+    {
       name: "name",
       label: "Name",
       align: "left",
@@ -15,16 +21,22 @@ export const useColumns = () => {
       field: "tagline",
     },
     {
+      name: "lactose",
+      label: "Lactose",
+      align: "left",
+      field: "lactose",
+    },
+    {
+      name: "dryHop",
+      label: "Dry Hop",
+      align: "left",
+      field: "dryHop",
+    },
+    {
       name: "description",
       label: "Description",
       align: "left",
       field: "description",
-    },
-    {
-      name: "image_url",
-      label: "Image",
-      align: "left",
-      field: "image_url",
     },
     {
       name: "abv",
@@ -38,18 +50,6 @@ export const useColumns = () => {
       label: "IBU",
       align: "left",
       field: "ibu",
-    },
-    {
-      name: "lactose",
-      label: "Lactose",
-      align: "left",
-      field: "lactose",
-    },
-    {
-      name: "dryHop",
-      label: "Dry Hop",
-      align: "left",
-      field: "dryHop",
     },
   ];
 

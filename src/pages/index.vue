@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page padding class="q-py-xl">
     <brew-dogs-table />
   </q-page>
 </template>
