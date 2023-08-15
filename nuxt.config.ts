@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   srcDir: "src/",
   runtimeConfig: {
     public: {
-      baseUrl: "https://api.punkapi.com/v2",
+      baseURL: "https://api.punkapi.com/v2",
     },
   },
   css: ["@quasar/extras/roboto-font/roboto-font.css"],
