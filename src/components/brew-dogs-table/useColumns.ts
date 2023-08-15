@@ -8,6 +8,37 @@ export const useColumns = () => {
       align: "left",
       field: "name",
     },
+    {
+      name: "tagline",
+      label: "Tagline",
+      align: "left",
+      field: "tagline",
+    },
+    {
+      name: "description",
+      label: "Description",
+      align: "left",
+      field: "description",
+    },
+    {
+      name: "image_url",
+      label: "Image",
+      align: "left",
+      field: "image_url",
+    },
+    {
+      name: "abv",
+      label: "ABV",
+      align: "left",
+      field: "abv",
+      sortable: true,
+    },
+    {
+      name: "ibu",
+      label: "IBU",
+      align: "left",
+      field: "ibu",
+    },
   ];
 
   return { columns };
