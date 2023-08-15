@@ -41,6 +41,17 @@
         <q-td key="ibu" :props="props">
           {{ props.row.ibu }}
         </q-td>
+
+        <q-td key="lactose" :props="props">
+          <q-chip
+            v-if="props.row.lactose.value > 0"
+            class="glossy text-bold q-ma-none"
+            color="red"
+            text-color="white"
+          >
+            {{ props.row.lactose.value }} {{ props.row.lactose.unit }}
+          </q-chip>
+        </q-td>
       </q-tr>
     </template>
   </q-table>

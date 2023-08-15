@@ -39,6 +39,12 @@ export const useColumns = () => {
       align: "left",
       field: "ibu",
     },
+    {
+      name: "lactose",
+      label: "Lactose",
+      align: "left",
+      field: "lactose",
+    },
   ];
 
   return { columns };
