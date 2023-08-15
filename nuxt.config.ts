@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   ssr: false,
   srcDir: "src/",
+  app: {
+    baseURL: "/brew-dogs/",
+    buildAssetsDir: "assets",
+  },
   runtimeConfig: {
     public: {
       baseURL: "https://api.punkapi.com/v2",
