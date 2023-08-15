@@ -1,63 +1,21 @@
-# Nuxt 3 Minimal Starter
+# Brew Dogs Demo
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
+## Local Setup
 
 ```bash
-# npm
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
 ```
 
-## Production
+Start the development server on `http://localhost:3000/brew-dogs/`:
 
-Build the application for production:
+## Publish with Github page
 
 ```bash
-# npm
-npm run build
+npm run generate
 
-# pnpm
-pnpm run build
+npm run deploy
 
-# yarn
-yarn build
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
