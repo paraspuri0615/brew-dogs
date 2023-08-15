@@ -1,4 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true }
-})
+  ssr: false,
+  srcDir: "src/",
+  runtimeConfig: {
+    public: {
+      baseUrl: "https://api.punkapi.com/v2",
+    },
+  },
+  css: ["@quasar/extras/roboto-font/roboto-font.css"],
+  modules: ["nuxt-quasar-ui"],
+});
